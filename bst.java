@@ -139,9 +139,15 @@ public class BST {
 				return rh+1;
 			
 		}
-		
-		
 	}
+	 int treeHeight(Node root){     //heightEdges
+            if(root == null){
+                return -1;
+            }
+            else{
+                return 1+Math.max(treeHeight(root.left), treeHeight(root.right));
+            }
+        }
 	void level()   //breadth first search (height according to edges)
 	{
 		int h;
@@ -170,6 +176,7 @@ public class BST {
 			printLevel(root.right,level-1);
 		}
 	}
+
 	void rLevel() {    //reverse the level of tree
 		int h;
 		h=height();
